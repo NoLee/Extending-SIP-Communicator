@@ -1,0 +1,44 @@
+                :::::: PROJECT PACKAGES ::::::
+
+1.  SipCommunicator
+    
+    net.java.sip.communicator --
+                               |---extensions ---> BlockUI
+                               |                   ConnectToDB
+                               |                   ForwardUI
+                               |                   InvalidCredUI
+                               |                   RegistrationToDB
+			       |		   BillingUI
+			       |		   BuyPackageUI
+			       |                   CredentialsUI
+			       |		   FriendUI
+                               |
+                               |---gui-----------> MenuBar
+                               |
+                               |---sip-----------> SipManager
+                               |
+                               _
+                               
+2. SipProxy
+
+    gov.nist.sip.proxy ---------
+                               |-----------------> Proxy
+                               |
+                               |---extensions----> Blocker
+                               |                   ConnectToDB
+                               |                   Forwarder
+                               |                   ProxyDecorator
+                               |                   SipListenerDec
+			       |		   BillingContext
+			       |		   BillingDecideStrategy
+			       |		   BillingFriends
+			       |		   BillingPremium
+			       |		   BillingStandard
+			       |		   BillingStrategy
+                               _
+
+3.Changes in existing code because of IP problems.
+
+	SipCommunicator.net.java.sip.communicator.sip.SipManager               ---- Line 1091: comment out whole line
+	SipCommunicator.net.java.sip.communicator.common.NetwordAddressManager ---- Line 295: uncomment whole line
+	                          
